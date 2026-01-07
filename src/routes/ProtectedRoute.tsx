@@ -1,7 +1,8 @@
 import { Navigate } from "react-router-dom"
+import React from "react"
 
 type Props = {
-  children: JSX.Element
+  children: React.ReactNode
 }
 
 const ProtectedRoute = ({ children }: Props) => {
@@ -11,7 +12,7 @@ const ProtectedRoute = ({ children }: Props) => {
     return <Navigate to="/admin/login" replace />
   }
 
-  return children
+  return <>{children}</>
 }
 
 export default ProtectedRoute
